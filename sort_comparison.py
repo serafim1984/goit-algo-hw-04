@@ -5,6 +5,8 @@ prefilled_list_10 = [random.randint(1, 10) for _ in range(10)]
 
 prefilled_list_100 = [random.randint(1, 100) for _ in range(100)]
 
+prefilled_list_1000 = [random.randint(1, 1000) for _ in range(1000)]
+
 #Merge sort functions
 
 def merge_sort(arr):
@@ -99,4 +101,20 @@ execution_time_sorted_100 = timeit.timeit(lambda: sorted(prefilled_list_100), nu
 
 print(f"Execution time sorted 100: {execution_time_sorted_100} seconds")
 
-print('\n Results of time measurement shows that method sort and function sorted() works considerably faster especially with longer arrays')
+print('\n Execution time for 1000 items array \n')
+
+execution_time_merge_1000 = timeit.timeit(lambda: merge_sort(prefilled_list_1000), number=1)
+
+print(f"Execution time merge 1000: {execution_time_merge_1000} seconds")
+
+execution_time_insertion_1000 = timeit.timeit(lambda: merge_sort(prefilled_list_1000), number=1)
+
+print(f"Execution time insertion 1000: {execution_time_insertion_1000} seconds")
+
+execution_time_sort_1000 = timeit.timeit(prefilled_list_1000.sort, number=1)
+
+print(f"Execution time sort 1000: {execution_time_sort_1000} seconds")
+
+execution_time_sorted_1000 = timeit.timeit(lambda: sorted(prefilled_list_1000), number=1)
+
+print(f"Execution time sorted 1000: {execution_time_sorted_1000} seconds")
